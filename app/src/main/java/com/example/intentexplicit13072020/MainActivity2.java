@@ -22,10 +22,16 @@ public class MainActivity2 extends AppCompatActivity {
 //            Log.d("BBB",chuoi);
 //        }
         // 2 : Nhan dang array
+//        Intent intent = getIntent();
+//        if (intent != null){
+//            ArrayList<String> arrayString = intent.getStringArrayListExtra("array");
+//            Log.d("BBB",arrayString.size() + "");
+//        }
+        // 3 : Nhan dang object
         Intent intent = getIntent();
         if (intent != null){
-            ArrayList<String> arrayString = intent.getStringArrayListExtra("array");
-            Log.d("BBB",arrayString.size() + "");
+            ArrayList<Person> person = (ArrayList<Person>) intent.getSerializableExtra("person");
+            Log.d("BBB",person.size() + "");
         }
     }
 }

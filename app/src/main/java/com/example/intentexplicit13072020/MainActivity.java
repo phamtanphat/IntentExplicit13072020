@@ -8,11 +8,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button mBtnString,mBtnArrayList;
+    Button mBtnString,mBtnArrayList,mBtnObject;
     ArrayList<String> mArrayListString;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         mBtnString = findViewById(R.id.buttonString);
         mBtnArrayList = findViewById(R.id.buttonArrayList);
+        mBtnObject = findViewById(R.id.buttonObject);
 
         mBtnString.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,5 +45,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        mBtnObject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Person person = new Person("Phat",26);
+                ArrayList<Person> arrPerson = new ArrayList<>();
+                arrPerson.add(person);
+                Intent intent = new Intent(MainActivity.this,MainActivity2.class);
+                intent.putExtra("person", arrPerson);
+                startActivity(intent);
+            }
+        });
+
+        // object , array list object
     }
 }
