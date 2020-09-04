@@ -30,7 +30,7 @@ public class MainActivity2 extends AppCompatActivity {
         // 3 : Nhan dang object
         Intent intent = getIntent();
         if (intent != null){
-            ArrayList<Person> person = (ArrayList<Person>) intent.getSerializableExtra("person");
+            ArrayList<Person> person = intent.getParcelableArrayListExtra("person");
             Log.d("BBB",person.size() + "");
         }
     }

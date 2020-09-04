@@ -59,4 +59,12 @@ public class MainActivity extends AppCompatActivity {
 
         // object , array list object
     }
+    private void sendSerilizable(){
+        Person person = new Person("Phat",26);
+        ArrayList<Person> arrPerson = new ArrayList<>();
+        arrPerson.add(person);
+        Intent intent = new Intent(MainActivity.this,MainActivity2.class);
+        intent.putExtra("person", arrPerson);
+        startActivity(intent);
+    }
 }
